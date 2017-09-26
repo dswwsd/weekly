@@ -321,7 +321,7 @@ class App extends Component {
             ])
           }
         );
-
+        return false;
       });
       dataArr.push(
         { h3: "项目详情" }
@@ -360,8 +360,9 @@ class App extends Component {
     contentDoc.execCommand('copy');
   }
   componentDidMount() {
+    const lsJSON = JSON.parse(localStorage.getItem('WEEKLY'));
     this.setState({
-      formData: JSON.parse(localStorage.getItem('WEEKLY'))
+      formData: lsJSON
     });
 
     codeMirror = window.CodeMirror.fromTextArea(document.querySelector('.textarea-section>textarea'), {
@@ -374,7 +375,7 @@ class App extends Component {
       tabSize: 2,
       // theme: "default"
     });
-    codeMirror.setValue(this.mdConvert(JSON.parse(localStorage.getItem('WEEKLY'))));
+    codeMirror.setValue(this.mdConvert(lsJSON));
 
     //  
     let frame = document.getElementById('preview');
