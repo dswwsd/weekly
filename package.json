@@ -2,7 +2,9 @@
   "name": "weekly",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://dswwsd.github.io/weekly",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "json2md": "^1.5.10",
     "markdown-it": "^8.4.0",
     "react": "^15.6.1",
@@ -14,6 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
