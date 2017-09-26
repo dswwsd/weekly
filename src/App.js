@@ -382,7 +382,7 @@ class App extends Component {
     let doc = frame.contentWindow.document;
     let link = doc.createElement("link");
     doc.title = '周报HTML';
-    link.href = 'https://v.dswwsd.net/markdown.css';
+    link.href = 'https://dswwsd.github.io/markdown.css';
     link.type = "text/css";
     link.rel = "stylesheet";
     link.media = "screen,print";
