@@ -83,7 +83,7 @@ const schema = {
           },
           "wiki": {
             "type": "string",
-            "title": "项目wiki",
+            "title": "项目文档",
             "format": "uri"
           },
           "prd": {
@@ -297,7 +297,7 @@ class App extends Component {
           },
           {
             ul: cleanArray([
-              `项目wiki: <${isURL(item.wiki) ? item.wiki : '无'}>`,
+              `项目文档: <${isURL(item.wiki) ? item.wiki : '无'}>`,
               `产品文档: <${isURL(item.prd) ? item.prd : '无'}>`,
               `${item.releaseDate ? '计划上线日期: ' + item.releaseDate : ''}`,
               `${item.progress ? '项目整体进度: ' + item.progress + '%' : ''}`,
