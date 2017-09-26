@@ -257,13 +257,11 @@ class App extends Component {
         </div>
         <div className="col-md-7 fix-content">
           <div className="col-md-5 textarea-section">
-            {/* <button className="btn btn-info" style={{marginBottom: '20px', width: '100%'}}>更新markdown</button> */}
             <legend>Markdown源码</legend>
-
             <textarea></textarea>
           </div>
           <div className="col-md-7 preview-section">
-            <button className="col-md-3 btn btn-info btn-sm" onClick={this.updatePreview}><span style={{ fontSize: 'normal' }}>更新预览</span></button>
+            {/* <button className="col-md-3 btn btn-info btn-sm" onClick={this.updatePreview}><span style={{ fontSize: 'normal' }}>更新预览</span></button> */}
             <button className="col-md-3 btn btn-info btn-sm" onClick={this.copyMD}><span style={{ fontSize: 'normal' }}>复制md</span></button>
             <button id="cpBtn" className="col-md-3 btn btn-info btn-sm" onClick={this.copyContent}><span style={{ fontSize: 'normal' }}>复制html</span></button>
             <iframe id="preview" frameBorder="0" title="预览"></iframe>
@@ -274,6 +272,9 @@ class App extends Component {
   }
   mdConvert(data) {
     let dataArr = [];
+    if (!data) {
+      return '';
+    }
     if (data.summary) {
       dataArr.push(
         { h3: "概述" },
@@ -360,6 +361,7 @@ class App extends Component {
     contentDoc.execCommand('copy');
   }
   componentDidMount() {
+    let _this = this;
     const lsJSON = JSON.parse(localStorage.getItem('WEEKLY'));
     this.setState({
       formData: lsJSON
@@ -374,6 +376,9 @@ class App extends Component {
       lineWrapping: true,
       tabSize: 2,
       // theme: "default"
+    });
+    codeMirror.on('change', function(){
+      _this.updatePreview();
     });
     codeMirror.setValue(this.mdConvert(lsJSON));
 
