@@ -374,7 +374,7 @@ class App extends Component {
       tabSize: 2,
       // theme: "default"
     });
-    codeMirror.setValue(this.mdConvert(this.state.formData));
+    codeMirror.setValue(this.mdConvert(JSON.parse(localStorage.getItem('WEEKLY'))));
 
     //  
     let frame = document.getElementById('preview');
