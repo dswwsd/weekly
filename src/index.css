@@ -16,7 +16,7 @@ body {
 }
 .CodeMirror {
   border: 1px solid #eee;
-  height: 600px;
+  height: 500px;
   font-size: 0.7em;
 }
 .preview-section {
@@ -31,7 +31,7 @@ body {
 #preview {
   width: 100%;
   border: 1px solid #eee;
-  min-height: 600px;
+  min-height: 500px;
 }
 @media only screen and (min-width : 992px) {
   .fix-content {
