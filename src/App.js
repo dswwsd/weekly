@@ -102,6 +102,7 @@ const schema = {
             "enum": [
               "开发中",
               "开发完成，待联调",
+              "联调中",
               "已提测",
               "测试中",
               "已上线",
@@ -275,7 +276,7 @@ class App extends Component {
     let dataArr = [];
     if (data.summary) {
       dataArr.push(
-        { h3: "概要" },
+        { h3: "概述" },
         { ul: cleanArray(data.summary) },
       );
     }
