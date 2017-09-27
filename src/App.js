@@ -393,7 +393,7 @@ class App extends Component {
     link.media = "screen,print";
     doc.getElementsByTagName("head")[0].appendChild(link);
 
-    // 
+    // iOS pagehide
     window.addEventListener("beforeunload", this.onUnload);
 
   }
