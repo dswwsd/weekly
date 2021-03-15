@@ -2,7 +2,7 @@
   "name": "weekly",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dswwsd.github.io/weekly",
+  "homepage": "https://weekly.dswwsd.net",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "json2md": "^1.5.10",
